@@ -1,23 +1,22 @@
 import React from 'react';
 import {HeaderContainer} from './styles';
 import Image from "next/image";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from 'next/link';
+import Cart from "../Cart/Cart";
 
-const Header = () => {
+
+const Header = ({cartLenght}) => {
     return (
         <HeaderContainer>
-            
-                <Image 
-                    src="/assets/MCDonalds.png" 
-                    alt="McDonalds Logo"
-                    width={50}
-                    height={50}
-                />
-                <button>
-                    <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
-                </button>
-            
+                <Link href="/">
+                    <Image 
+                        src="/assets/MCDonalds.png" 
+                        alt="McDonalds Logo"
+                        width={50}
+                        height={50}
+                    />
+                </Link>
+                <Cart cartLenght={cartLenght}/>
         </HeaderContainer>
     );
 }
