@@ -11,6 +11,7 @@ export const IndexContainer = styled.main`
     }
     .card-container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         

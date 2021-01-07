@@ -12,7 +12,7 @@ export const Card = styled.div`
     margin: 1.5rem;
 
     word-break: break-all;
-    width: 25%;
+    width: 80%;
     h3 {
         margin-top: 1rem;
     }

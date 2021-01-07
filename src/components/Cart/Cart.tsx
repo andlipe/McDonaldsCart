@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CartContext } from '../../context/CartContext';
 
 const Cart = () => {
-    const { summarizeCart } = React.useContext(CartContext)
-    const cartLength = summarizeCart();
+    const { cartLength } = React.useContext(CartContext)
+    const cartTotal = cartLength();
     return (
         <>
             <Link href="/cart">
                 <FontAwesomeIcon icon={faShoppingCart} size="2x"/>   
             </Link>
-                <p>{cartLength}</p>
+                <p>{cartTotal}</p>
         </>
     );
 }
