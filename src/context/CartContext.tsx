@@ -15,7 +15,13 @@ const CartProvider = ({ children }) => {
 
     const addToCart = (product: IProduct) => {
         setCart([...cart, product]);
-        console.log(cart);
+    }
+
+    const removeFromCart = (product: IProduct) => {
+        const findOne = cart.findIndex(item => item.id === product.id);
+        const removeOne = cart.filter((item,index) => index != findOne)
+        
+        setCart(removeOne);
     }
 
     const cartLength = () => {
@@ -38,7 +44,9 @@ const CartProvider = ({ children }) => {
 
 
     return(
-        <CartContext.Provider value={{cart, setCart, addToCart, cartLength, summarizeCart}}>
+        <CartContext.Provider value={
+            {cart, setCart, addToCart, cartLength, summarizeCart, removeFromCart}
+            }>
             {children}
         </CartContext.Provider>
     )
