@@ -10,8 +10,8 @@ const ItemCard = ({ productData }) => {
             <Image 
                     src={productData.image}
                     alt="McDonalds Logo"
-                    width={100}
-                    height={100}
+                    width={150}
+                    height={150}
                 />
             <h3>{productData.name}</h3>
             <p>{productData.price}</p>
