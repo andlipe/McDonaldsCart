@@ -17,6 +17,7 @@ export const HeaderContainer = styled.header`
         border: none;
         background-color: inherit;
         outline: none;
+        cursor: pointer;
       }
   p {
     position: absolute;

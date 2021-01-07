@@ -10,6 +10,9 @@ export const Card = styled.div`
     padding: 2rem;
     border-radius: 1.5rem;
     margin: 1.5rem;
+
+    word-break: break-all;
+    width: 25%;
     h3 {
         margin-top: 1rem;
     }

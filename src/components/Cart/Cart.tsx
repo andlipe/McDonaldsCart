@@ -2,14 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Cart = ({cartLenght}) => {
+import { CartContext } from '../../context/CartContext';
+
+const Cart = () => {
+    const { summarizeCart } = React.useContext(CartContext)
+    const cartLength = summarizeCart();
     return (
         <>
             <Link href="/cart">
-                <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
-                        
+                <FontAwesomeIcon icon={faShoppingCart} size="2x"/>   
             </Link>
-                <p>{cartLenght}</p>
+                <p>{cartLength}</p>
         </>
     );
 }

@@ -1,9 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
+import { products } from "../../static-data/static-data-producs";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-    const {categoryId} = req.query;
-    res.statusCode = 200;
-    console.log();
-
-    res.send(categoryId)
+  res.statusCode = 200
+  res.json(products)
 }

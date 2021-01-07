@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Cart from "../Cart/Cart";
 
 
-const Header = ({cartLenght}) => {
+const Header = () => {
     return (
         <HeaderContainer>
                 <Link href="/">
@@ -16,7 +16,7 @@ const Header = ({cartLenght}) => {
                         height={50}
                     />
                 </Link>
-                <Cart cartLenght={cartLenght}/>
+                <Cart />
         </HeaderContainer>
     );
 }
