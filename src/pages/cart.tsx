@@ -45,7 +45,7 @@ function cart() {
                 <h3>Total</h3>
                 <p>R$ {totalPrice}</p>
             </TotalPriceContainer>
-            <button onClick={() => openModal()} >Finalizar Compra</button>
+            <button onClick={() => openModal()} className="checkoutButton">Finalizar Compra</button>
         </CartContainer>
         <Modal showModal={showModal}  setShowModal={setShowModal}/>
         </>

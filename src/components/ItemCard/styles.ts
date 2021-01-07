@@ -27,10 +27,11 @@ export const Card = styled.div`
         border: 1px solid #FDCC00;
         padding: 0.5rem;
         border-radius: 0.5rem;
-        transition: background-color 0.5s;
+        transition: all 0.3s;
         margin-top: 1rem;
-        &:hover{
-            background-color: #FDCC00
+        :hover, :active {
+            background-color: #FDCC00;
+            color: white;
         }
     }
 `
