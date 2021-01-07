@@ -3,22 +3,29 @@ import Header from '../components/Header/Header'
 import ItemCard from '../components/ItemCard/ItemCard'
 import {IndexContainer} from '../styles/indexStyle';
 import Filter from '../components/Filter/Filter';
+import { useFetch } from '../hooks/useFetch';
+ 
 
 function App() {
   const [products, setProducts] = React.useState([]);
-  const fetchProducts = async () => {
-    await fetch('/api/products')
-      .then(response => response.json())
-      .then(result => setProducts(result))
-  }
+  const firstRender = React.useRef(true);
+  const { data } = useFetch("/api/products")
+  
 
   React.useEffect(() => {
-    fetchProducts();
-  }, []);
+    if(!data){
+      firstRender.current = !firstRender.current;
+    } else {
+      setProducts(data);
+      firstRender.current = !firstRender.current;
+
+    }
+  },[data]);
   
+  if(!data) return <div>...Loading</div>
   return (
     <>
-    <Header />
+    <Header actualPage="Index"/>
     <IndexContainer>
       <Filter />
       <div className="card-container">
@@ -30,7 +37,6 @@ function App() {
     </>
   );
 }
-
 
 
 export default App;
