@@ -6,9 +6,7 @@ export const IndexContainer = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    select{
-        width:50%;
-    }
+
     .card-container {
         display: flex;
         flex-direction: row;

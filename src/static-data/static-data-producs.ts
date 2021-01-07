@@ -56,14 +56,14 @@ let products = [
         image: "/assets/McChickenClubHouse.png"
     },
     {
-        id: 7,
+        id: 8,
         idCategory: 3,
         name: "MC Nuggets",
         price: 12,
         image: "/assets/McNuggets.png"
     },
     {
-        id: 7,
+        id: 9,
         idCategory: 4,
         name: "MC Colosso",
         price: 12,

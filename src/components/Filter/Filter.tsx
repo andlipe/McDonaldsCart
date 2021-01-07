@@ -1,4 +1,6 @@
 import React from 'react';
+import { FilterContainer } from './styles';
+
 
 const Filter = () => {
     const [categories, setCategories] = React.useState([]);
@@ -14,11 +16,11 @@ const Filter = () => {
     }, []);
 
     return (
-        <select>
+        <FilterContainer>
             {categories.map(category => 
                 <option key={category.id}>{category.name}</option>
             )}
-        </select>
+        </FilterContainer>
     );
 }
 
