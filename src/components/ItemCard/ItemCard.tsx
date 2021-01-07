@@ -20,7 +20,4 @@ const ItemCard = ({ productData }) => {
     );
 };
 
-const areEqual = (prevProps, nextProps) => {
-     // THIS IS NEVER LOGGED!!
-}
-export default React.memo(ItemCard, areEqual);
+export default React.memo(ItemCard);

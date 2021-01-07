@@ -10,20 +10,9 @@ export const HeaderContainer = styled.header`
   align-items: center;
   background: #DD3B30;
   position:relative;
-  svg {
-        margin: 0.5rem;
-        position: absolute;
-        right: 3.3rem;
-        border: none;
-        background-color: inherit;
-        outline: none;
-        cursor: pointer;
-      }
-  p {
-    position: absolute;
-    right: 1rem;
-    border: 1px solid black;
-    font-size: 2.5rem;
+  img{
+    cursor: pointer;
   }
+  
 
 `

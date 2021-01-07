@@ -26,7 +26,7 @@ function cart() {
 
     return (
         <>
-        <Header />
+        <Header actualPage="Cart"/>
         <CartContainer>
             <h1> Finalizar Pedido </h1>
             <div className="cardContainer">
