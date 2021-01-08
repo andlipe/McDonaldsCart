@@ -1,5 +1,4 @@
 import React from 'react';
-import absoluteUrl from "next-absolute-url";
 import Header from '../components/Header/Header'
 import ItemCard from '../components/ItemCard/ItemCard'
 import {IndexContainer} from '../styles/indexStyle';
@@ -42,12 +41,12 @@ function App({ initialProducts, categories }) {
   );
 }
 
-export async function getServerSideProps({req}) {
-  const { origin } = absoluteUrl(req)  
-  const getProducts = await fetch(`${origin}/api/products`);
+export async function getStaticProps(context) {
+  const url = process.env.URL;
+  const getProducts = await fetch(`${url}/api/products`);
   const initialProducts = await getProducts.json()
 
-  const getCategories = await fetch(`${origin}/api/categories`)
+  const getCategories = await fetch(`${url}/api/categories`)
   const categories = await getCategories.json();
   return {
     props: { initialProducts, categories }
