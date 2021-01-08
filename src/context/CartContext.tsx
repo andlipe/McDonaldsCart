@@ -7,13 +7,17 @@ interface IProduct {
     price: number,
     image: string
 }
+
+interface ICartProduct extends IProduct {
+    count: number;
+}
 interface IContextProps {
     cart: IProduct[];
     setCart: (cart:IProduct[]) => void;
     addToCart: (product: IProduct) => void;
     removeFromCart: (product: IProduct) => void;
     cartLength: () => number;
-    summarizeCart: (cart: Array<IProduct>) => Object;
+    summarizeCart: (cart: Array<IProduct>) => Array<ICartProduct>;
 }
 
 export const CartContext = React.createContext<IContextProps>(null);
@@ -46,7 +50,8 @@ const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
         };
         summary[item.id].count++;
         return summary;
-        }, {});
+        }, []);
+        
         return Object.values(groupedItems);
     }
 

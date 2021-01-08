@@ -32,7 +32,6 @@ function cart() {
         <CartContainer>
             <h1> Finalizar Pedido </h1>
             <div className="cardContainer">
-                {console.log(cartList.length)}
                 {cartList.length != 0 ? cartList.map(item => 
                 <div key={item.id} className="card">
                     <Image 
