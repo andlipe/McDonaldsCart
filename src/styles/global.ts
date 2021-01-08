@@ -8,6 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: none;
     font-family: Roboto, sans-serif;
+    font-display: swap;
     }
     div {
         display: flex;
