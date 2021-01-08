@@ -6,8 +6,8 @@ import { FilterContainer } from './styles';
 const Filter = ({setProducts, categoriesInitial }) => {
     const [categories, setCategories] = React.useState([]);
     const [categoryId, setCategoryId] = React.useState<number>();
-    //const {data: categories} = useFetch('/api/categories');
     const {data: products} = useFetch(categoryId ? `api/products/${categoryId}` : `api/products/`);
+
     const handleFilter = (event) =>{
         if (event.target.value != undefined){
         setCategoryId(event.target.value);
@@ -16,11 +16,12 @@ const Filter = ({setProducts, categoriesInitial }) => {
     React.useEffect(() => {
         if(products != undefined){
         setProducts(products)
-        }else{
-            setCategories(categoriesInitial)
-        }
-
+        } 
     }, [products]);
+
+    React.useEffect(() => {
+        setCategories(categoriesInitial)
+    }, []);
 
     if(!categories) return <div>...Loading</div>
 

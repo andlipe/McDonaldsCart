@@ -4,26 +4,21 @@ import ItemCard from '../components/ItemCard/ItemCard'
 import {IndexContainer} from '../styles/indexStyle';
 import Filter from '../components/Filter/Filter';
 import { useFetch } from '../hooks/useFetch';
- 
+
 
 function App({ initialProducts, categories }) {
   const [products, setProducts] = React.useState([]);
   const firstRender = React.useRef(true);
-  const { data } = useFetch("/api/products")
   
-
   React.useEffect(() => {
-    if(!data){
-      firstRender.current = !firstRender.current;
+    if(!firstRender.current){
       setProducts(initialProducts);
     } else {
-      setProducts(data);
       firstRender.current = !firstRender.current;
-
     }
-  },[data]);
+  },[firstRender]);
   
-  if(!data) return <div>...Loading</div>
+  if(!products) return <div>...Loading</div>
   return (
     <>
     <Header actualPage="Index"/>
