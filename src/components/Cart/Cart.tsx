@@ -7,7 +7,7 @@ import { CartCounter } from './styles';
 
 const Cart = () => {
     const { cartLength } = React.useContext(CartContext)
-    const cartTotal = React.useCallback(cartLength(),[cartLength]);
+    const cartTotal = cartLength();
     return (
         <CartCounter>
             <Link href="/cart" passHref>
