@@ -49,7 +49,7 @@ function cart() {
             </div>
             <TotalPriceContainer>
                 <h3>Total</h3>
-                <p>R$ {totalPrice}</p>
+                <p>R$ {totalPrice.toFixed(2)}</p>
             </TotalPriceContainer>
             <CheckoutButton onClick={() => openModal()} >Finalizar Compra</CheckoutButton>
         </CartContainer>
