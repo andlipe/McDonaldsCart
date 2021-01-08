@@ -41,7 +41,7 @@ export const ModalContent = styled.div`
 
     @media(min-width: 768px) {
         width: 40%;
-        height: 40%;
+        height: 50%;
         h3{
             margin-top: 2rem;
         }
@@ -50,5 +50,7 @@ export const ModalContent = styled.div`
             margin-top: 2rem;
         }
     }
-
+    @media(min-height: 1024px) {
+        height: 40%;
+    }
 `

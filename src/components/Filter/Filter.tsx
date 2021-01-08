@@ -28,7 +28,7 @@ const Filter = ({setProducts, categoriesInitial }) => {
     return (
         <>
         <FilterContainer onChange={(event) => handleFilter(event)}>
-            <option label="Selecione um filtro" > </option>
+            <option label="Listar todos" > </option>
             {categories.map(category => 
                 <option value={category.id} label={category.name} key={category.id}></option>
             )}
