@@ -22,7 +22,8 @@ export const CartContainer = styled.main`
             justify-content: space-between;
             border: 1px solid #FDCC00;
             p{
-                width:20%
+                width:20%;
+                font-weight: 500;
             }
             button {
                 border: 1px solid #FDCC00;
@@ -58,7 +59,9 @@ export const TotalPriceContainer = styled.div`
 
     border: 1px solid #FDCC00;
     margin-top: 1rem;
-
+    p{
+        font-weight: 500;
+    }
     @media(min-width: 1025px) {
         
             width: 60%;

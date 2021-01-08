@@ -9,6 +9,7 @@ export default createGlobalStyle`
     outline: none;
     font-family: Roboto, sans-serif;
     font-display: swap;
+    font-weight: 300;
     }
     div {
         display: flex;
