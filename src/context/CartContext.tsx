@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
 interface IProduct {
     id: number,
@@ -7,11 +7,19 @@ interface IProduct {
     price: number,
     image: string
 }
+interface IContextProps {
+    cart: IProduct[];
+    setCart: (cart:IProduct[]) => void;
+    addToCart: (product: IProduct) => void;
+    removeFromCart: (product: IProduct) => void;
+    cartLength: () => number;
+    summarizeCart: (cart: Array<IProduct>) => Object;
+}
 
-export const CartContext = React.createContext(null);
+export const CartContext = React.createContext<IContextProps>(null);
 
-const CartProvider = ({ children }) => {
-    const [cart, setCart] = React.useState<IProduct[]>([]);
+const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
+    const [cart, setCart] = React.useState<IProduct[] | []>([]);
 
     const addToCart = (product: IProduct) => {
         setCart([...cart, product]);
@@ -42,11 +50,8 @@ const CartProvider = ({ children }) => {
         return Object.values(groupedItems);
     }
 
-
     return(
-        <CartContext.Provider value={
-            {cart, setCart, addToCart, cartLength, summarizeCart, removeFromCart}
-            }>
+        <CartContext.Provider value={{cart, setCart, addToCart, cartLength, summarizeCart, removeFromCart}}>
             {children}
         </CartContext.Provider>
     )
