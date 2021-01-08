@@ -12,7 +12,19 @@ export const IndexContainer = styled.main`
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
-        
+     
     }
 
+    .filter-container{
+        width:100%;
+    }
+    @media(min-width: 1025px){
+        width:95%;
+        .filter-container{
+            width: 95%;
+            height: 80px;
+            position: relative;
+        }
+    }
+    
 `

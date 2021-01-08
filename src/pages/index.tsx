@@ -27,7 +27,9 @@ function App() {
     <>
     <Header actualPage="Index"/>
     <IndexContainer>
+      <div className="filter-container">
       <Filter />
+      </div>
       <div className="card-container">
         {products.map(product => 
           <ItemCard key={product.id} productData={product} />

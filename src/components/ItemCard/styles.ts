@@ -4,15 +4,13 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     background-color: white;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-    width: fit-content;
-    padding: 2rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 80%;
+    padding: 1.5rem;
     border-radius: 1.5rem;
     margin: 1.5rem;
-
     word-break: break-all;
-    width: 80%;
     h3 {
         margin-top: 1rem;
     }
@@ -33,5 +31,9 @@ export const Card = styled.div`
             background-color: #FDCC00;
             color: white;
         }
+    }
+
+    @media(min-width: 1025px){
+        width: 20%;
     }
 `
