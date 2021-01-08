@@ -3,7 +3,7 @@ let products = [
         id: 0,
         idCategory: 0,
         name: "2 MC Ofertas Classicas",
-        price: 19,
+        price: 19.0,
         image: "/assets/Combo1.png"
     },
     {
@@ -24,21 +24,21 @@ let products = [
         id: 3,
         idCategory: 3,
         name: "Fritas",
-        price: 12,
+        price: 12.0,
         image: "/assets/Fritas.png"
     },
     {
         id: 4,
         idCategory: 4,
         name: "MC Flurry",
-        price: 12,
+        price: 12.0,
         image: "/assets/McFlurry.png"
     },
     {
         id: 5,
         idCategory: 0,
         name: "Combo",
-        price: 12,
+        price: 12.0,
         image: "/assets/MCDonalds.png"
     },
     {
@@ -59,14 +59,14 @@ let products = [
         id: 8,
         idCategory: 3,
         name: "MC Nuggets",
-        price: 12,
+        price: 12.0,
         image: "/assets/McNuggets.png"
     },
     {
         id: 9,
         idCategory: 4,
         name: "MC Colosso",
-        price: 12,
+        price: 12.0,
         image: "/assets/McColosso.png"
     }
 ];

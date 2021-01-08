@@ -38,4 +38,17 @@ export const ModalContent = styled.div`
             color: white;
         }
     }
+
+    @media(min-width: 768px) {
+        width: 40%;
+        height: 40%;
+        h3{
+            margin-top: 2rem;
+        }
+        button {
+            width: 60%;
+            margin-top: 2rem;
+        }
+    }
+
 `

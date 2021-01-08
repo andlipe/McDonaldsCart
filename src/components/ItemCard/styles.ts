@@ -20,7 +20,6 @@ export const Card = styled.div`
     button {
         border: none;
         outline: none;
-        cursor: pointer;
         background-color: white;
         border: 1px solid #FDCC00;
         padding: 0.5rem;
