@@ -3,7 +3,6 @@ import Header from '../components/Header/Header'
 import ItemCard from '../components/ItemCard/ItemCard'
 import {IndexContainer} from '../styles/indexStyle';
 import Filter from '../components/Filter/Filter';
-import { useFetch } from '../hooks/useFetch';
 
 
 function App({ initialProducts, categories }) {

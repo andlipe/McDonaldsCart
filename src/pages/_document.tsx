@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
       return(
         <Html lang="pt-br">
           <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="dns-prefetch" href="//fonts.googleapis.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet"/>
           </Head>
