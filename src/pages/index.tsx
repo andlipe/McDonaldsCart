@@ -28,7 +28,7 @@ function App() {
     <Header actualPage="Index"/>
     <IndexContainer>
       <div className="filter-container">
-      <Filter />
+      <Filter setProducts={setProducts}/>
       </div>
       <div className="card-container">
         {products.map(product => 

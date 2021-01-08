@@ -25,6 +25,14 @@ export const IndexContainer = styled.main`
             height: 80px;
             position: relative;
         }
+        .card-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            width: 100%;
+        }
     }
     
 `
