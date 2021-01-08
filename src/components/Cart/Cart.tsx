@@ -11,7 +11,9 @@ const Cart = () => {
     return (
         <CartCounter>
             <Link href="/cart" passHref>
-                <a><FontAwesomeIcon icon={faShoppingCart} size="2x" color="white"/></a>  
+                <a aria-label="Ícone de carrinho com contagem dos itens adicionados">
+                    <FontAwesomeIcon icon={faShoppingCart} size="2x" color="white" />
+                    </a>  
             </Link>
             <label>{cartTotal}</label>
         </CartCounter>

@@ -9,7 +9,9 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   background: #DD3B30;
-  position:relative;
+  position:sticky;
+  top:0;
+  z-index: 1;
   img{
     cursor: pointer;
   }

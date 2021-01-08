@@ -1,26 +1,28 @@
 import React from 'react';
+import { useFetch } from '../../hooks/useFetch';
 import { FilterContainer } from './styles';
 
 
 const Filter = () => {
     const [categories, setCategories] = React.useState([]);
-
-    const loadCategories = async () => {
-        await fetch('/api/categories')
-            .then(response => response.json())
-            .then(result => setCategories(result))
-    }
+    const {data} = useFetch('/api/categories');
 
     React.useEffect(() => {
-        loadCategories();
-    }, []);
+        if(data){
+            setCategories(data)
+        }
+    }, [data]);
+    
+    if(!data) return <div>...Loading</div>
 
     return (
+        <>
         <FilterContainer>
             {categories.map(category => 
-                <option key={category.id}>{category.name}</option>
+                <option label={category.name} key={category.id}>{category.name}</option>
             )}
         </FilterContainer>
+        </>
     );
 }
 

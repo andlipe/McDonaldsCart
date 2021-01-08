@@ -9,12 +9,12 @@ const ItemCard = ({ productData }) => {
         <Card>
             <Image 
                     src={productData.image}
-                    alt="McDonalds Logo"
+                    alt={productData.name}
                     width={150}
                     height={150}
                 />
             <h3>{productData.name}</h3>
-            <p>{productData.price}</p>
+            <p>R$ {productData.price}</p>
             <button onClick={() => addToCart(productData)}>Adicionar ao carrinho</button>
         </Card>
     );
