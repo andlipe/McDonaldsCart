@@ -6,7 +6,7 @@ import Cart from "../Cart/Cart";
 import Back from '../Back/Back';
 
 
-const Header = ({actualPage}) => {
+const Header = ({actualPage = "Index"}) => {
     const [page, setPage] = React.useState('');
 
     React.useEffect(() => {
