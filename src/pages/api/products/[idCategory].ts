@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { products } from "../../../static-data/static-data-producs";
+import { products } from "../../../static-data/static-data-products";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
     const { idCategory } = req.query;

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { products } from "../../static-data/static-data-producs";
+import { products } from "../../static-data/static-data-products";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   res.statusCode = 200
