@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --collect-coverage"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
