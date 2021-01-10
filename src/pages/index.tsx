@@ -8,13 +8,8 @@ import Filter from '../components/Filter/Filter';
 function App({ initialProducts, categories }) {
   const [products, setProducts] = React.useState([]);
   const firstRender = React.useRef(true);
-  
   React.useEffect(() => {
-    if(!firstRender.current){
-      setProducts(initialProducts);
-    } else {
-      firstRender.current = !firstRender.current;
-    }
+    setProducts(initialProducts);
   },[firstRender]);
   
   if(!products) return <div>...Loading</div>
@@ -27,7 +22,9 @@ function App({ initialProducts, categories }) {
       </div>
       <div className="card-container">
         {products.map(product => 
+          
           <ItemCard key={product.id} productData={product} />
+          
           )}
       </div> 
     </IndexContainer>
