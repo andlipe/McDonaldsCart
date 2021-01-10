@@ -16,8 +16,8 @@ const Header = ({actualPage = "Index"}) => {
 
     return (
         <HeaderContainer>
-                <Link href="/">
-                    <a><Image 
+                <Link href="/" >
+                    <a aria-label="Logo do Mc Donalds com redirecionamento para página inicial"><Image 
                         src="/assets/MCDonalds.png" 
                         alt="McDonalds Logo"
                         width={50}

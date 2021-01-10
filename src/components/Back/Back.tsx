@@ -8,9 +8,9 @@ import { BackContainer } from './style';
 
 const Back = () => {
     return (
-        <BackContainer>
+        <BackContainer >
             <Link href="/"> 
-                <a>
+                <a aria-label="Ícone para retornar á página inicial">
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </a> 
             </Link>
