@@ -26,5 +26,10 @@ export const CartCounter = styled.div `
         line-height: 1;
         background-color: #FDCC00;
     }
+    .cart-preview {
+        position: absolute;
+        right: 10px;
+        top: 50px;
+    }
 
 `

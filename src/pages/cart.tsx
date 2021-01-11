@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import CartItemCard from '../components/CartItemCard/CartItemCard';
 import EmptyCart from '../components/EmptyCart/EmptyCart';
 import Header from '../components/Header/Header';
 import Modal from '../components/Modal/Modal';
@@ -33,19 +34,7 @@ function Cart() {
             <h1> Finalizar Pedido </h1>
             <div className="cardContainer">
                 {cartList.length != 0 ? cartList.map(item => 
-                <div key={item.id} className="card">
-                    <Image 
-                        src={item.image}
-                        alt={item.name}
-                        width={50}
-                        height={50}
-                        />
-                    <p>{item.name}</p>
-                    <p>R$ {item.price}</p>
-                    <button onClick={() => removeFromCart(item)}> - </button>
-                    <span aria-label="Número de produtos do mesmo tipo">{item.count}</span>
-                    <button onClick={() => addToCart(item)}> + </button>
-                </div>    
+                <CartItemCard item={item} key={item.id}/>
                 ): 
                 <EmptyCart />
                 }

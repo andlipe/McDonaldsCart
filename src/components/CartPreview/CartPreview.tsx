@@ -1,28 +1,20 @@
 import Image from 'next/image';
 import React from 'react';
 import { CartContext } from '../../context/CartContext';
+import CartItemCard from '../CartItemCard/CartItemCard';
+import { CartPreviewContainer } from './styles';
 
 const CartPreview = () => {
-    const { cart, summarizeCart } = React.useContext(CartContext)
+    const { cart, addToCart, removeFromCart, summarizeCart, setCart } = React.useContext(CartContext);
+    
     const fetchCart = summarizeCart(cart);
-    if(cart.length < 0) return <div>Carregando...</div>
+
     return (
-        <div>
+        <CartPreviewContainer className="cart-preview">
         {fetchCart.map(item => 
-            <div key={item.id} className="card">
-            <Image 
-                src={item.image}
-                alt={item.name}
-                width={50}
-                height={50}
-                />
-            <p>{item.name}</p>
-            <p>R$ {item.price}</p>
-            <span>{item.count}</span>
-        </div>    
+            <CartItemCard item={item} key={item.id}/>
         )}
-            
-        </div>
+        </CartPreviewContainer>
     );
 }
 
