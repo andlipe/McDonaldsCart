@@ -28,7 +28,7 @@ export const CartCounter = styled.div `
     }
     .cart-preview {
         position: absolute;
-        right: 50px;
+        right: 40px;
         top: 60px;
         
     }

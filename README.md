@@ -40,3 +40,6 @@ yarn test
 ```sh
 yarn build
 ```
+
+## Versão em produção  
+Uma versão em produção pode ser acessada [nesse link](https://mc-donalds-cart.vercel.app).

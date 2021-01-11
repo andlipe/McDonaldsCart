@@ -12,10 +12,11 @@ const CartIcon = () => {
     const cartTotal = cartLength();
 
     const handleShowCartOnAddItemToCart = () => {
-        setShowCartPreview(true)
-        setTimeout(() => {
+        window.setTimeout(() => {
             setShowCartPreview(false)
-        }, 3000);
+        }, 1000);
+        setShowCartPreview(true)
+        
     }
 
     React.useEffect(() => {
