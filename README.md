@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/ZYCPE4V.png" width=500/>
 
 ## Sobre o Projeto
-Projeto com objetivo de criar um simples cart utilizando nextJS. 
+Projeto com objetivo de criar um sistema simples de cart utilizando nextJS. 
 
 ## Criado com
 
@@ -12,11 +12,6 @@ Projeto com objetivo de criar um simples cart utilizando nextJS.
 
 ### Pré requisitos
 Node.Js 14.x
-
-npm
-```sh
-npm install npm@latest -g
-```
 
 ## Instalação
 
@@ -28,7 +23,12 @@ git clone https://github.com/andlipe/McDonaldsCart.git
 ```sh
 yarn
 ```
-3. Inicie o projeto
+3. Renomeie o arquivo .env.local.example para .env.local e substitua e coloque a URL onde será rodado o projeto
+```sh
+URL="http://localhost:3000"
+``` 
+
+4. Inicie o projeto
 ```sh
 yarn dev
 ```
