@@ -7,12 +7,12 @@ import { CartContext } from '../context/CartContext';
 import { CartContainer, TotalPriceContainer, CheckoutButton } from '../styles/cartStyle';
 
 
-function cart() {
+function Cart() {
     const [totalPrice, setTotalPrice] = React.useState(0);
     const [showModal, setShowModal] = React.useState(false);
     const { cart, addToCart, removeFromCart, summarizeCart, setCart } = React.useContext(CartContext);
     const cartList = summarizeCart(cart);
-
+    
     const openModal = () => {
         setShowModal(prev => !prev);
         setCart([])
@@ -43,23 +43,26 @@ function cart() {
                     <p>{item.name}</p>
                     <p>R$ {item.price}</p>
                     <button onClick={() => removeFromCart(item)}> - </button>
-                    <span>{item.count}</span>
+                    <span aria-label="Número de produtos do mesmo tipo">{item.count}</span>
                     <button onClick={() => addToCart(item)}> + </button>
                 </div>    
                 ): 
                 <EmptyCart />
                 }
             </div>
-            <TotalPriceContainer>
-                <h3>Total</h3>
-                <p>R$ {totalPrice.toFixed(2)}</p>
-            </TotalPriceContainer>
+            
             {cartList.length != 0 ? 
+            <>
+            <TotalPriceContainer>
+            <h3>Total</h3>
+            <p>R$ {totalPrice.toFixed(2)}</p>
+            </TotalPriceContainer>
             <CheckoutButton onClick={() => openModal()} >Finalizar Compra</CheckoutButton>
+            </>
             : null}
         </CartContainer>
         <Modal showModal={showModal}  setShowModal={setShowModal}/>
         </>
     )
 }
-export default cart;
+export default Cart;

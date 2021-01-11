@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CartContext } from '../../context/CartContext';
 import { CartCounter } from './styles';
 
-const Cart = () => {
+const CartIcon = () => {
     const { cartLength } = React.useContext(CartContext)
     const cartTotal = cartLength();
     return (
@@ -20,4 +20,4 @@ const Cart = () => {
     );
 }
 
-export default React.memo(Cart);
+export default React.memo(CartIcon);

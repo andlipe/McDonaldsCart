@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, screen, act, waitFor, cleanup, fireEvent} from '@testing-library/react';
+import {render, screen, act, cleanup} from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import CartProvider from '../context/CartContext';
 import App from '../pages/index';
@@ -32,7 +32,7 @@ describe('Index Page', () => {
     });
     
     it('should add a product to cart', () => {
-        const {debug} = render(
+        render(
         <CartProvider>
             <ProductProvider>
                 <App initialProducts={products} categories={categories} />
@@ -49,4 +49,7 @@ describe('Index Page', () => {
 
         expect(parseInt(totalProducts)).toEqual(productButton.length);
     })
+
+    
+    
 })
