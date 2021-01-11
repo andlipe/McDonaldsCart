@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ModalContainer, ModalContent } from './styles';
 import {useRouter} from 'next/router'
-const Modal = ({showModal, setShowModal}) => {
+const Modal = ({showModal = false, setShowModal }) => {
     const router = useRouter();
     const closeModal = () => {
         setShowModal(prev => !prev);

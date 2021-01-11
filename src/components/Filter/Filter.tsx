@@ -1,16 +1,19 @@
 import React from 'react';
+import { ProductContext } from '../../context/ProductContext';
 import { useFetch } from '../../hooks/useFetch';
 import { FilterContainer } from './styles';
 
 
-const Filter = ({setProducts, categoriesInitial }) => {
+const Filter = ({ categoriesInitial }) => {
     const [categories, setCategories] = React.useState([]);
     const [categoryId, setCategoryId] = React.useState<number>();
+    const { setProducts } = React.useContext(ProductContext)
     const {data: products} = useFetch(categoryId ? `api/products/${categoryId}` : `api/products/`);
-
+    
     const handleFilter = (event) =>{
-        if (event.target.value != undefined){
-        setCategoryId(event.target.value);
+        
+        if (event.currentTarget.value != undefined){
+            setCategoryId(event.currentTarget.value);
         }
     }
     React.useEffect(() => {
@@ -28,9 +31,9 @@ const Filter = ({setProducts, categoriesInitial }) => {
     return (
         <>
         <FilterContainer onChange={(event) => handleFilter(event)}>
-            <option label="Listar todos" > </option>
+            <option label="Listar todos"></option>
             {categories.map(category => 
-                <option value={category.id} label={category.name} key={category.id}></option>
+                <option data-testid="filter-option" value={category.id} label={category.name} key={category.id}>{category.name}</option>
             )}
         </FilterContainer>
         </>

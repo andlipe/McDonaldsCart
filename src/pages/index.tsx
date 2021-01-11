@@ -3,10 +3,11 @@ import Header from '../components/Header/Header'
 import ItemCard from '../components/ItemCard/ItemCard'
 import {IndexContainer} from '../styles/indexStyle';
 import Filter from '../components/Filter/Filter';
+import { ProductContext } from '../context/ProductContext';
 
 
 function App({ initialProducts, categories }) {
-  const [products, setProducts] = React.useState([]);
+  const {products, setProducts} = React.useContext(ProductContext);
   const firstRender = React.useRef(true);
   React.useEffect(() => {
     setProducts(initialProducts);
@@ -18,9 +19,10 @@ function App({ initialProducts, categories }) {
     <Header actualPage="Index"/>
     <IndexContainer>
       <div className="filter-container">
-      <Filter setProducts={setProducts} categoriesInitial={categories}/>
+      <Filter categoriesInitial={categories}/>
       </div>
       <div className="card-container">
+
         {products.map(product => 
           
           <ItemCard key={product.id} productData={product} />
