@@ -13,7 +13,7 @@ function App({ initialProducts, categories }) {
     setProducts(initialProducts);
   },[firstRender]);
   
-  if(!products) return <div>...Loading</div>
+
   return (
     <>
     <Header actualPage="Index"/>

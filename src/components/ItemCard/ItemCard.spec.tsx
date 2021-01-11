@@ -2,6 +2,7 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import ItemCard from './ItemCard';
 import CartProvider from '../../context/CartContext';
+import userEvent from '@testing-library/user-event';
 
 describe('ItemCard', () => {
     it('should render a product', () => {
@@ -20,5 +21,6 @@ describe('ItemCard', () => {
 
         expect(productName).toBeInTheDocument();
     });
+    
     
 });

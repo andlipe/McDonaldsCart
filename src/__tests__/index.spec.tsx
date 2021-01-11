@@ -23,7 +23,7 @@ describe('Index Page', () => {
         const header = screen.getByRole('banner',{name: ""});
         const filter = screen.getByRole('combobox', {name: ""});
         const itemCard = screen.getAllByRole('heading')
-
+            
         expect(header).toBeInTheDocument();
         expect(filter).toBeInTheDocument();
         itemCard.forEach(item => {
@@ -31,4 +31,22 @@ describe('Index Page', () => {
         })
     });
     
+    it('should add a product to cart', () => {
+        const {debug} = render(
+        <CartProvider>
+            <ProductProvider>
+                <App initialProducts={products} categories={categories} />
+            </ProductProvider>
+        </CartProvider>
+        )
+        const productButton = screen.getAllByRole('button', {
+            name: /Adicionar ao carrinho/i
+        })
+        productButton.forEach(button => {
+            userEvent.click(button)
+        })
+        const totalProducts = screen.getByLabelText("Total de produtos no carrinho").innerHTML;
+
+        expect(parseInt(totalProducts)).toEqual(productButton.length);
+    })
 })

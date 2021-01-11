@@ -15,7 +15,7 @@ const Cart = () => {
                     <FontAwesomeIcon icon={faShoppingCart} size="2x" color="white" />
                     </a>  
             </Link>
-            <label>{cartTotal}</label>
+            <label aria-label="Total de produtos no carrinho">{cartTotal}</label>
         </CartCounter>
     );
 }
