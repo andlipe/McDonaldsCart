@@ -29,7 +29,7 @@ export const CartCounter = styled.div `
     .cart-preview {
         position: absolute;
         right: 50px;
-        top: 65px;
+        top: 60px;
         
     }
 

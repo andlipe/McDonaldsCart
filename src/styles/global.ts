@@ -27,7 +27,6 @@ export default createGlobalStyle`
         padding: 0.5rem;
         border-radius: 0.5rem;
         transition: all 0.3s;
-        margin-top: 1rem;
         :hover, :active {
             background-color: #FDCC00;
             color: white;

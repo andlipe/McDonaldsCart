@@ -17,7 +17,7 @@ const CartPreview = () => {
         {fetchCart.map(item => 
             <CartItemCard item={item} key={item.id}/>
         )}
-        <button onClick={() => handleClick()}>Ir para o carrinho</button>
+        <button className="redirect-button" onClick={() => handleClick()}>Ir para o carrinho</button>
         </CartPreviewContainer>
     );
 }

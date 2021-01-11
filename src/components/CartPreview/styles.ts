@@ -8,10 +8,13 @@ export const CartPreviewContainer = styled.div`
         box-sizing: border-box;
         display: flex;
         background-color: white;
-        padding: 3rem;
+        padding: 2rem;
         width: 40%;
         border-radius: 5px;
-
+        .redirect-button{
+            padding: 1rem;
+            margin-top: 1rem;
+        }
         ::before {
             content: "";
             position: absolute;
@@ -26,5 +29,6 @@ export const CartPreviewContainer = styled.div`
             border-right: 5px solid transparent;
             border-bottom: 5px solid white;
         }
+        
     }
 `
