@@ -28,8 +28,9 @@ export const CartCounter = styled.div `
     }
     .cart-preview {
         position: absolute;
-        right: 10px;
-        top: 50px;
+        right: 50px;
+        top: 65px;
+        
     }
 
 `

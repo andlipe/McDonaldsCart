@@ -7,11 +7,25 @@ import { CartCounter } from './styles';
 import CartPreview from '../CartPreview/CartPreview';
 
 const CartIcon = () => {
-    const { cartLength } = React.useContext(CartContext)
+    const { cart, cartLength } = React.useContext(CartContext)
     const [showCartPreview, setShowCartPreview] = React.useState(false);
     const cartTotal = cartLength();
+
+    const handleShowCartOnAddItemToCart = () => {
+        setShowCartPreview(true)
+        setTimeout(() => {
+            setShowCartPreview(false)
+        }, 3000);
+    }
+
+    React.useEffect(() => {
+        if(cart.length > 0) {
+        handleShowCartOnAddItemToCart();
+        }
+    }, [cart]);
+
     return (
-        <CartCounter onMouseEnter={() => setShowCartPreview(true)} /*onMouseLeave={() => setShowCartPreview(false)}*/>
+        <CartCounter onMouseEnter={() => setShowCartPreview(true)} onMouseLeave={() => setShowCartPreview(false)}>
             <Link href="/cart" passHref>
                 <a aria-label="Ícone de carrinho com contagem dos itens adicionados">
                     <FontAwesomeIcon icon={faShoppingCart} size="2x" color="white" />

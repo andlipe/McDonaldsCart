@@ -11,7 +11,7 @@ import { CartContainer, TotalPriceContainer, CheckoutButton } from '../styles/ca
 function Cart() {
     const [totalPrice, setTotalPrice] = React.useState(0);
     const [showModal, setShowModal] = React.useState(false);
-    const { cart, addToCart, removeFromCart, summarizeCart, setCart } = React.useContext(CartContext);
+    const { cart, summarizeCart, setCart } = React.useContext(CartContext);
     const cartList = summarizeCart(cart);
     
     const openModal = () => {
@@ -38,8 +38,7 @@ function Cart() {
                 ): 
                 <EmptyCart />
                 }
-            </div>
-            
+            </div>   
             {cartList.length != 0 ? 
             <>
             <TotalPriceContainer>
