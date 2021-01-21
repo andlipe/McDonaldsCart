@@ -6,6 +6,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     res.statusCode = 200;
 
     const filterProductsByCategoryid = products.filter(product => product.idCategory.toString() === idCategory)
+    res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
 
     res.json(filterProductsByCategoryid)
 }
