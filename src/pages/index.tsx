@@ -8,10 +8,9 @@ import { ProductContext } from '../context/ProductContext';
 
 function App({ initialProducts, categories }) {
   const {products, setProducts} = React.useContext(ProductContext);
-  const firstRender = React.useRef(true);
   React.useEffect(() => {
     setProducts(initialProducts);
-  },[firstRender]);
+  },[]);
   
 
   return (
