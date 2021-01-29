@@ -8,8 +8,7 @@ const ItemCard = ({ productData }) => {
     const { addToCart } = React.useContext(CartContext);
     let [imageIsLoad, setImageIsLoad] = React.useState(false);
     React.useEffect(() => {
-        setImageIsLoad(true)
-        console.log(imageIsLoad)
+        setImageIsLoad(!imageIsLoad);
     }, [])
     return (
         <Card>
