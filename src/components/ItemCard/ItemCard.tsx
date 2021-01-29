@@ -6,14 +6,14 @@ import Skeleton from 'react-loading-skeleton';
 
 const ItemCard = ({ productData }) => {
     const { addToCart } = React.useContext(CartContext);
-    const imageIsLoad = React.useRef(false);
+    let [imageIsLoad, setImageIsLoad] = React.useState(false);
     React.useEffect(() => {
-        imageIsLoad.current = true
-        
+        setImageIsLoad(true)
+        console.log(imageIsLoad)
     }, [])
     return (
         <Card>
-            {imageIsLoad.current ? <Image 
+            {imageIsLoad ? <Image 
                     src={productData.image}
                     alt={productData.name}
                     width={150}
@@ -21,10 +21,10 @@ const ItemCard = ({ productData }) => {
                     loading={'lazy'}
                 
                 />: <Skeleton height={150} width={150} />}
-            <h3>{imageIsLoad.current ? productData.name : <Skeleton width={150} height={20}/>}</h3>
-            <p> {imageIsLoad.current ? 'R$' + productData.price : <Skeleton width={50} height={20}/>}</p>
+            <h3>{imageIsLoad ? productData.name : <Skeleton width={150} height={20}/>}</h3>
+            <p> {imageIsLoad ? 'R$' + productData.price : <Skeleton width={50} height={20}/>}</p>
             <button onClick={() => addToCart(productData)} >
-                {imageIsLoad.current ?'Adicionar ao carrinho' : <Skeleton height={30} width={125}/>}
+                {imageIsLoad ?'Adicionar ao carrinho' : <Skeleton height={30} width={125}/>}
             </button>
             
         </Card>
