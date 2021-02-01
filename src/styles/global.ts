@@ -23,12 +23,12 @@ export default createGlobalStyle`
         border: none;
         outline: none;
         background-color: white;
-        border: 1px solid #FDCC00;
+        border: 1px solid ${props => props.theme.colors.secondary};
         padding: 0.5rem;
         border-radius: 0.5rem;
         transition: all 0.3s;
         :hover, :active {
-            background-color: #FDCC00;
+            background-color: ${props => props.theme.colors.secondary};
             color: white;
         }
     }

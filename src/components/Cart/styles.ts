@@ -24,7 +24,7 @@ export const CartCounter = styled.div `
         padding: 0.4rem 0.5rem;
         color: white;
         line-height: 1;
-        background-color: #FDCC00;
+        background-color: ${props => props.theme.colors.secondary};
     }
     .cart-preview {
         position: absolute;

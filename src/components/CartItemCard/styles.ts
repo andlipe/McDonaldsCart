@@ -7,13 +7,13 @@ export const ItemCard = styled.div`
     flex-direction: row;
 
     justify-content: space-between;
-    border: 1px solid #FDCC00;
+    border: 1px solid ${props => props.theme.colors.secondary};
     p{
         width:20%;
         font-weight: 500;
     }
     button {
-        border: 1px solid #FDCC00;
+        border: 1px solid ${props => props.theme.colors.secondary};
         border-radius: 0.5rem;
         background-color: inherit;
         width: 38px;

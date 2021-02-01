@@ -2,12 +2,16 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import Header from './Header';
 import CartProvider from '../../context/CartContext';
+import {ThemeProvider} from 'styled-components';
+import light from '../../styles/themes/light';
 describe('HeaderComponent', () => {
     it('should have McDonalds Logo', () => {
         render(
-        <CartProvider>
-            <Header />
-        </CartProvider>
+        <ThemeProvider theme={light}>
+            <CartProvider>
+                <Header />
+            </CartProvider>
+        </ThemeProvider>
         )
         const McDonaldsLogo = screen.getByAltText('McDonalds Logo');
 
@@ -16,9 +20,11 @@ describe('HeaderComponent', () => {
     
     it('should have back Icon in cart Page',  () => {
         render(
-            <CartProvider>
-                <Header actualPage="cart"/>
-            </CartProvider>
+            <ThemeProvider theme={light}>
+                <CartProvider>
+                    <Header actualPage="cart"/>
+                </CartProvider>
+            </ThemeProvider>
         )
             const BackIcon =  screen.getByRole("link", 
             {name: /Ícone para retornar á página inicial/i})
@@ -29,9 +35,11 @@ describe('HeaderComponent', () => {
 
     it('should have cart Icon in index',  () => {
         render(
-            <CartProvider>
-                <Header />
-            </CartProvider>
+            <ThemeProvider theme={light}>
+                <CartProvider>
+                    <Header />
+                </CartProvider>
+            </ThemeProvider>
             )
 
         const cartIcon = screen.getByRole('link', 

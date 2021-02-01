@@ -26,7 +26,7 @@ export const ModalContent = styled.div`
     }
     button {
         width: 100%;
-        border: 1px solid #FDCC00;
+        border: 1px solid ${props => props.theme.colors.secondary};
         padding: 1rem;
         margin-top: 1rem;
         border-radius: 0.5rem;
@@ -34,7 +34,7 @@ export const ModalContent = styled.div`
         outline: none;
         
         :hover, :active {
-            background-color: #FDCC00;
+            background-color: ${props => props.theme.colors.secondary};
             color: white;
         }
     }

@@ -31,7 +31,7 @@ export const TotalPriceContainer = styled.div`
 
     align-items: center;
 
-    border: 1px solid #FDCC00;
+    border: 1px solid ${props => props.theme.colors.secondary};
     margin-top: 1rem;
     p{
         font-weight: 500;
@@ -44,7 +44,7 @@ export const TotalPriceContainer = styled.div`
 `
 
 export const CheckoutButton = styled.button`
-        border: 1px solid #FDCC00;
+        border: 1px solid ${props => props.theme.colors.secondary};
         border-radius: 0.5rem;
         margin-top: 2rem;
         padding: 1rem;
@@ -53,7 +53,7 @@ export const CheckoutButton = styled.button`
         transition: all 0.3s;
         outline: none;
         :hover, :active {
-            background-color: #FDCC00;
+            background-color: ${props => props.theme.colors.secondary};
             color: white;
         }
     

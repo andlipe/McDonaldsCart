@@ -4,10 +4,16 @@ import userEvent from '@testing-library/user-event'
 import CartProvider from '../context/CartContext';
 import Cart from '../pages/cart';
 import ItemCard from '../components/ItemCard/ItemCard';
-
+import {ThemeProvider} from 'styled-components';
+import light from '../styles/themes/light';
 describe('CartPage', () => {
     it('should render empty cart page', () => {
-        render(<CartProvider> <Cart /> </CartProvider>)
+        render(
+        <ThemeProvider theme={light}>
+            <CartProvider> 
+                <Cart /> 
+            </CartProvider>
+        </ThemeProvider>)
         const header = screen.getByRole('banner', {name: ""});
         const emptyCartButton= screen.getByRole('button', {name: /Continuar comprando/i});
         
@@ -17,17 +23,19 @@ describe('CartPage', () => {
     });
     it('should render cart with products', () => {
         render(
-        <CartProvider>
-            <ItemCard productData={
-            {
-                id: 1,
-                name: "Hambuguer",
-                image: "/assets/McDonalds.png",
-                price: 12
-            }
-            }/>
-            <Cart />
-        </CartProvider>)
+        <ThemeProvider theme={light}>    
+            <CartProvider>
+                <ItemCard productData={
+                {
+                    id: 1,
+                    name: "Hambuguer",
+                    image: "/assets/McDonalds.png",
+                    price: 12
+                }
+                }/>
+                <Cart />
+            </CartProvider>
+        </ThemeProvider>)
         const productButton = screen.getByRole('button', {
             name: /Adicionar ao carrinho/i
         })
@@ -39,7 +47,8 @@ describe('CartPage', () => {
     })
     it('should add 1 product', () => {
         render(
-        <CartProvider>
+        <ThemeProvider theme={light}>    
+            <CartProvider>
                 <ItemCard productData={
                 {
                     id: 1,
@@ -49,7 +58,8 @@ describe('CartPage', () => {
                 }
                 }/>
                 <Cart />
-        </CartProvider>)
+            </CartProvider>
+        </ThemeProvider>)
         const productButton = screen.getByRole('button', {
             name: /Adicionar ao carrinho/i
         });
@@ -65,7 +75,8 @@ describe('CartPage', () => {
     });
     it('should remove 1 product', () => {
         render(
-        <CartProvider>
+        <ThemeProvider theme={light}>    
+            <CartProvider>
                 <ItemCard productData={
                 {
                     id: 1,
@@ -75,7 +86,8 @@ describe('CartPage', () => {
                 }
                 }/>
                 <Cart />
-        </CartProvider>)
+            </CartProvider>
+        </ThemeProvider>)
         const productButton = screen.getByRole('button', {
             name: /Adicionar ao carrinho/i
         });
@@ -87,17 +99,19 @@ describe('CartPage', () => {
     });
     it('should open modal', () => {
         render(
+        <ThemeProvider theme={light}>    
             <CartProvider>
-                    <ItemCard productData={
-                    {
-                        id: 1,
-                        name: "Hambuguer",
-                        image: "/assets/McDonalds.png",
-                        price: 12
-                    }
-                    }/>
-                    <Cart />
-            </CartProvider>)
+                <ItemCard productData={
+                {
+                    id: 1,
+                    name: "Hambuguer",
+                    image: "/assets/McDonalds.png",
+                    price: 12
+                }
+                }/>
+                <Cart />
+            </CartProvider>
+        </ThemeProvider>)
         const productButton = screen.getByRole('button', {
                 name: /Adicionar ao carrinho/i
         });
